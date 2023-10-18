@@ -34,7 +34,7 @@ export const Income = () => {
   return (
     <Box padding={"10px"} sx={{ background: "white", borderRadius: "10px" }}>
       <Box>
-        <Typography variant="h4">
+        <Typography variant="h5">
           <strong>Income</strong>
         </Typography>
         <List>

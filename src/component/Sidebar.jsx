@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import {
   HomeOutlined,
+  DashboardOutlined,
   ShoppingCartOutlined,
   TrendingUpOutlined,
   AccountBoxOutlined,
@@ -53,21 +54,24 @@ const navItems = [
   },
 ];
 
-// const [anchorEl, setAnchorEl] = useState(null);
-// const isOpen = Boolean(anchorEl);
-// const handleClick = (event) => setAnchorEl(event.currentTarget);
-// const handleClose = () => setAnchorEl(null);
-// console.log(navItems);
 export const Sidebar = () => {
   const navigate = useNavigate();
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("dashboard");
   return (
     <Box component={"nav"} bgcolor={"#040440"}>
-      <Box width="100%" minHeight={"90.3vh"}>
+      <Box maxWidth="280px" height={"100vh"}>
         <Box m="1.5rem 2rem 2rem 3rem">
           <FlexBetween>
-            <Box display="flex" alignItems="center" gap="0.5rem">
-              <Typography variant="h5" fontWeight="bold" color={"white"}>
+            <Box
+              display="flex"
+              alignItems="center"
+              flexDirection={"row"}
+              gap="0.5rem"
+              justifyContent={"space-between"}
+              color={"white"}
+            >
+              <DashboardOutlined />
+              <Typography variant="h5" fontWeight="bold">
                 DASHBOARD
               </Typography>
             </Box>
@@ -92,6 +96,8 @@ export const Sidebar = () => {
                     setActive(lcText);
                   }}
                   sx={{
+                    marginRight: "10px",
+                    marginLeft: "10px",
                     borderRadius: ".6rem",
                     width: "50%",
                     backgroundColor:
@@ -101,16 +107,13 @@ export const Sidebar = () => {
                 >
                   <ListItemIcon
                     sx={{
-                      ml: "1rem",
+                      // ml: "1rem",
                       color: active === lcText ? "white" : "#61658B ",
                     }}
                   >
                     {icon}
                   </ListItemIcon>
                   <ListItemText primary={text} />
-                  {/* {active === lcText && (
-                    <ChevronRightOutlined sx={{ ml: "auto" }} />
-                    )} */}
                   {arrow}
                 </ListItemButton>
               </ListItem>
@@ -118,9 +121,21 @@ export const Sidebar = () => {
           })}
         </List>
       </Box>
-      <Box sx={{ background: "#2D2D69", borderRadius: "15px" }}>
-        <Divider />
-        <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
+      <Box
+        sx={{
+          background: "#2D2D69",
+          borderRadius: "5px",
+          margin: "10px",
+          // marginBottom: "15px",
+        }}
+      >
+        {/* <Divider /> */}
+        <FlexBetween
+          textTransform="none"
+          gap="5px"
+          padding={"10px"}
+          sx={{ marginTop: "-20px" }}
+        >
           <Box
             component="img"
             alt="profile"
@@ -138,10 +153,10 @@ export const Sidebar = () => {
               fontSize="0.9rem"
               sx={{ color: "white" }}
             >
-              {/* {user.name} */}Shrukh
+              Shrukh
             </Typography>
             <Typography fontSize="0.8rem" sx={{ color: "gray" }}>
-              {/* {user.occupation} */} Project Manager
+              Project Manager
             </Typography>
           </Box>
           <KeyboardArrowDownOutlined

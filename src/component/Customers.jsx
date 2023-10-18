@@ -42,7 +42,7 @@ export const Customers = () => {
   return (
     <Box padding={"10px"} sx={{ background: "white", borderRadius: "10px" }}>
       <Box>
-        <Typography variant="h4">
+        <Typography variant="h5">
           <strong>Customers</strong>
         </Typography>
         <List>
