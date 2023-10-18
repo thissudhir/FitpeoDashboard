@@ -1,27 +1,17 @@
 import React, { useState } from "react";
 import {
   Box,
-  Paper,
   Typography,
-  TextField,
   Select,
   MenuItem,
-  Table,
   InputBase,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  FormControl,
-  IconButton,
   List,
   ListItem,
   ListItemText,
   Divider,
+  ListItemAvatar,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-
 import { styled, alpha } from "@mui/material/styles";
 
 const Search = styled("div")(({ theme }) => ({
@@ -53,8 +43,8 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
+    padding: theme.spacing(1, 1, 1, 1),
+
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -71,44 +61,35 @@ export const Products = () => {
     setTimeRange(event.target.value);
   };
 
-  // Sample product data
   const products = [
     {
       id: 1,
-      name: "Product 1",
-      stock: 10,
+      name: "Abstract 3D",
+      stock: "32 in stock",
       price: "$19.99",
       totalSales: 100,
       thumbnail:
-        "https://t4.ftcdn.net/jpg/02/45/56/35/360_F_245563558_XH9Pe5LJI2kr7VQuzQKAjAbz9PAyejG1.jpg",
+        "https://t3.ftcdn.net/jpg/03/21/20/26/360_F_321202623_x3OYh5YGY5QjqkI9J6k355x1eoc53hJq.jpg",
       description: "lorem",
     },
     {
       id: 2,
-      name: "Product 2",
-      stock: 10,
+      name: "Abstract 2D",
+      stock: "32 in stock",
       price: "$19.99",
       totalSales: 100,
       thumbnail:
-        "https://t4.ftcdn.net/jpg/02/45/56/35/360_F_245563558_XH9Pe5LJI2kr7VQuzQKAjAbz9PAyejG1.jpg",
+        "https://st.depositphotos.com/1167801/3262/i/450/depositphotos_32620845-stock-photo-crystals-macro.jpg",
       description: "lorem",
     },
-    // Add more product data as needed
   ];
 
-  const tableStyle = {
-    border: "none",
-    boxShadow: "none",
-    borderBottom: "none",
-  };
-  //   const handleChange = (event: SelectChangeEvent) => {
-  //     setAge(event.target.value);
-  //   };
-
   return (
-    <Box padding={"10px"} sx={{ background: "white" }}>
+    <Box padding={"10px"} sx={{ background: "white", borderRadius: "10px" }}>
       <Box display={"flex"} justifyContent={"space-between"}>
-        <Typography variant="h4">Product sell</Typography>
+        <Typography variant="h4">
+          <strong>Product sell</strong>
+        </Typography>
         <Box sx={{ display: "flex" }}>
           <Search>
             <SearchIconWrapper>
@@ -133,64 +114,77 @@ export const Products = () => {
         </Box>
       </Box>
       <Box>
-        {/* <Box display={"flex"} justifyContent={"space-between"}>
-          <Typography variant="p" flex={4}>
-            Product Name
-          </Typography>
-          <Typography variant="p" flex={0.5}>
-            Stock
-          </Typography>
-          <Typography variant="p" flex={0.5}>
-            Price
-          </Typography>
-          <Typography variant="p" flex={0.5}>
-            Total Sale
-          </Typography>
-        </Box> */}
-        <Divider />
-        {/* <Box display={"flex"} justifyContent={"space-between"}>
-          {products.map((product, index) => (
-            <>
-              <Typography variant="p">{product.name}</Typography>
-              <Typography variant="p">{product.stock}</Typography>
-              <Typography variant="p">{product.price}</Typography>
-              <Typography variant="p">{product.totalSales}</Typography>
-            </>
-          ))}
-        </Box> */}
-        {/* <List>
-          {products.map((product, index) => (
+        <List>
+          <Box
+            display={"flex"}
+            justifyContent={"space-between"}
+            paddingLeft={"10px"}
+            color={"gray"}
+            marginBottom={"10px"}
+          >
+            <Typography variant="p" flex={4}>
+              Product Name
+            </Typography>
+            <Typography variant="p" flex={0.5}>
+              Stock
+            </Typography>
+            <Typography variant="p" flex={0.5}>
+              Price
+            </Typography>
+            <Typography variant="p" flex={0.5}>
+              Total Sale
+            </Typography>
+          </Box>
+
+          <Divider />
+          {products.map((product) => (
             <ListItem key={product.id}>
+              <ListItemAvatar>
+                <Box
+                  style={{
+                    width: 100,
+                    height: 60,
+                    borderRadius: 5,
+                    overflow: "hidden",
+                    marginRight: "10px",
+                  }}
+                >
+                  <Box
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      backgroundImage: `url(${product.thumbnail})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                  ></Box>
+                </Box>
+              </ListItemAvatar>
               <ListItemText
-                primary={` ${product.name} ${product.stock} ${product.price} ${product.totalSales}`}
-                secondary={`${product.description}`}
+                primary={<strong>{product.name}</strong>}
+                secondary={product.description}
               />
+              <Box
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  flex: 0.43,
+                }}
+              >
+                <Typography variant="p" style={{ flex: 1.5 }}>
+                  {product.stock}
+                </Typography>
+                <Typography variant="p" style={{ flex: 1.9 }}>
+                  {product.price}
+                </Typography>
+                <Typography variant="p" style={{ flex: 1.3 }}>
+                  {product.totalSales}
+                </Typography>
+              </Box>
             </ListItem>
           ))}
-        </List> */}
-
-        <TableContainer component={Paper}>
-          <Table style={tableStyle}>
-            <TableHead>
-              <TableRow>
-                <TableCell style={tableStyle}>Product Name</TableCell>
-                <TableCell style={tableStyle}>Stock</TableCell>
-                <TableCell style={tableStyle}>Price</TableCell>
-                <TableCell style={tableStyle}>Total Sales</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {products.map((product) => (
-                <TableRow key={product.id}>
-                  <TableCell style={tableStyle}>{product.name}</TableCell>
-                  <TableCell style={tableStyle}>{product.stock}</TableCell>
-                  <TableCell style={tableStyle}>{product.price}</TableCell>
-                  <TableCell style={tableStyle}>{product.totalSales}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+        </List>
       </Box>
     </Box>
   );

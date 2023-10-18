@@ -41,7 +41,7 @@ export const Piechart = () => {
             fill="#8884d8"
             dataKey="value"
           />
-          <Label value="Pie Chart Center" position="center" fill="black" />
+          {/* <Label value="Pie Chart Center" position="center" fill="black" /> */}
         </PieChart>
       </ResponsiveContainer>
     </Container>
