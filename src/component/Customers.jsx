@@ -10,7 +10,6 @@ import {
   ListItemAvatar,
 } from "@mui/material";
 
-// Sample customer data
 const customers = [
   {
     id: 1,

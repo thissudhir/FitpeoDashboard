@@ -44,7 +44,9 @@ export const Barchart = () => {
           padding: "10px",
         }}
       >
-        <Typography variant="h5">Overview</Typography>
+        <Typography variant="h5">
+          <strong>Overview</strong>
+        </Typography>
 
         <Select
           value={selectedInterval}

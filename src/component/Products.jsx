@@ -87,7 +87,7 @@ export const Products = () => {
   return (
     <Box padding={"10px"} sx={{ background: "white", borderRadius: "10px" }}>
       <Box display={"flex"} justifyContent={"space-between"}>
-        <Typography variant="h4">
+        <Typography variant="h5">
           <strong>Product sell</strong>
         </Typography>
         <Box sx={{ display: "flex" }}>

@@ -5,32 +5,77 @@ import {
   List,
   ListItem,
   ListItemText,
+  Box,
+  Divider,
+  ListItemAvatar,
 } from "@mui/material";
 
 // Sample income data
 const incomeData = [
-  { product: "Product A", income: "$1000" },
-  { product: "Product B", income: "$750" },
-  { product: "Product C", income: "$1200" },
+  {
+    product: "Product A",
+    income: "$1000",
+    description: "this is a good product",
+  },
+  {
+    product: "Product B",
+    income: "$750",
+    description: "this is a good product",
+  },
+  {
+    product: "Product C",
+    income: "$1200",
+    description: "this is a good product",
+  },
   // Add more income data as needed
 ];
 
 export const Income = () => {
   return (
-    <Container sx={{ marginTop: "30px", marginBottom: "30px" }}>
-      <Typography variant="h4" sx={{ marginBottom: "20px" }}>
-        Income from Products
-      </Typography>
-      <List>
-        {incomeData.map((item, index) => (
-          <ListItem key={index}>
-            <ListItemText
-              primary={item.product}
-              secondary={`Income: ${item.income}`}
-            />
-          </ListItem>
-        ))}
-      </List>
-    </Container>
+    <Box padding={"10px"} sx={{ background: "white", borderRadius: "10px" }}>
+      <Box>
+        <Typography variant="h4">
+          <strong>Income</strong>
+        </Typography>
+        <List>
+          <Box
+            display={"flex"}
+            justifyContent={"space-between"}
+            paddingLeft={"10px"}
+            color={"gray"}
+            marginBottom={"10px"}
+          >
+            <Typography variant="p" flex={4}>
+              Product Income
+            </Typography>
+            <Typography variant="p" flex={1.5}>
+              income
+            </Typography>
+          </Box>
+
+          <Divider />
+          {incomeData.map((income) => (
+            <ListItem key={income.id}>
+              <ListItemAvatar></ListItemAvatar>
+              <ListItemText
+                primary={<strong>{income.product}</strong>}
+                secondary={income.description}
+              />
+              <Box
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  flex: 0.43,
+                }}
+              >
+                <Typography variant="p" style={{ flex: 1.5 }}>
+                  {income.income}
+                </Typography>
+              </Box>
+            </ListItem>
+          ))}
+        </List>
+      </Box>
+    </Box>
   );
 };
