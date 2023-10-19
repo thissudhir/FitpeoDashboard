@@ -130,13 +130,7 @@ export const Sidebar = () => {
           // marginBottom: "15px",
         }}
       >
-        {/* <Divider /> */}
-        <FlexBetween
-          textTransform="none"
-          gap="5px"
-          padding={"10px"}
-          sx={{ marginTop: "-20px" }}
-        >
+        <FlexBetween textTransform="none" gap="5px" padding={"10px"}>
           <Box
             component="img"
             alt="profile"
