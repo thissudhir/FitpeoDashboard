@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Container,
   Typography,
   List,
   ListItem,
@@ -10,7 +9,6 @@ import {
   ListItemAvatar,
 } from "@mui/material";
 
-// Sample income data
 const incomeData = [
   {
     product: "Product A",
@@ -27,7 +25,6 @@ const incomeData = [
     income: "$1200",
     description: "this is a good product",
   },
-  // Add more income data as needed
 ];
 
 export const Income = () => {

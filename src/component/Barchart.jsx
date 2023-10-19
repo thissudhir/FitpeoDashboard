@@ -19,7 +19,7 @@ const data = [
 
 const selectStyles = {
   "&.MuiSelect-select": {
-    border: "none", // Remove the border
+    border: "none",
   },
 };
 export const Barchart = () => {
@@ -49,9 +49,16 @@ export const Barchart = () => {
         </Typography>
 
         <Select
+          sx={{
+            boxShadow: "none",
+            color: "lightgray",
+            background: "#FAFBFF",
+            ".MuiOutlinedInput-notchedOutline": { border: 0 },
+          }}
           value={selectedInterval}
           onChange={handleIntervalChange}
-          variant="standard"
+          variant="outlined"
+          size="small"
           classes={selectStyles}
         >
           <MenuItem value="monthly">Monthly</MenuItem>

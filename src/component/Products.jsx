@@ -21,11 +21,11 @@ const Search = styled("div")(({ theme }) => ({
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
+  marginRight: 2,
+  marginLeft: 2,
   width: "100%",
   [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
+    marginLeft: theme.spacing(0),
     width: "auto",
   },
 }));
@@ -86,11 +86,20 @@ export const Products = () => {
 
   return (
     <Box padding={"10px"} sx={{ background: "white", borderRadius: "10px" }}>
-      <Box display={"flex"} justifyContent={"space-between"}>
-        <Typography variant="h5">
+      <Box display={"flex"} justifyContent={"space-between"} gap={"10px"}>
+        <Typography variant="h5" flex={4}>
           <strong>Product sell</strong>
         </Typography>
-        <Box sx={{ display: "flex" }}>
+        <Box
+          sx={{
+            // display: "flex",
+            justifyContent: "end",
+            background: "#FAFBFF",
+
+            borderRadius: "5px",
+            color: "lightgray",
+          }}
+        >
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -100,8 +109,21 @@ export const Products = () => {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+        </Box>
+
+        <Box>
           <Select
-            sx={{ m: 1, minWidth: 120 }}
+            sx={{
+              m: 1,
+              color: "lightgray",
+              background: "#FAFBFF",
+              borderRadius: "5px",
+              padding: "0px",
+              margin: "0px",
+              minWidth: 120,
+              boxShadow: "none",
+              ".MuiOutlinedInput-notchedOutline": { border: 0 },
+            }}
             size="small"
             value={timeRange}
             onChange={handleTimeRangeChange}

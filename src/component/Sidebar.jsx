@@ -10,6 +10,8 @@ import {
   Menu,
   MenuItem,
   Typography,
+  IconButton,
+  Drawer,
 } from "@mui/material";
 import {
   HomeOutlined,
@@ -22,7 +24,6 @@ import {
   KeyboardArrowDownOutlined,
   KeyboardArrowRightOutlined,
 } from "@mui/icons-material";
-
 import FlexBetween from "./FlexBetween";
 import { useNavigate } from "react-router-dom";
 const navItems = [
@@ -53,9 +54,9 @@ const navItems = [
     arrow: <KeyboardArrowRightOutlined />,
   },
 ];
-
 export const Sidebar = () => {
   const navigate = useNavigate();
+
   const [active, setActive] = useState("dashboard");
   return (
     <Box component={"nav"} bgcolor={"#040440"}>

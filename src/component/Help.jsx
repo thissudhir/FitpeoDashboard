@@ -19,10 +19,9 @@ export const Help = () => {
   };
 
   const handleSubmit = () => {
-    // You can handle form submission logic here
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
+    // console.log("Name:", name);
+    // console.log("Email:", email);
+    // console.log("Message:", message);
     // Reset form fields
     setName("");
     setEmail("");

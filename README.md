@@ -1,8 +1,7 @@
-# React + Vite
+# Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- I have transformed the content from this Google Drive link (https://drive.google.com/file/d/1dTCv9Lo-R9MFn9itZ0fko-ANObP-dnVU/view) into functional code. While I aimed for pixel-perfect accuracy, the resulting pie chart doesn't exactly match the reference image. Nevertheless, it functions correctly. I'm actively exploring techniques to refine the pie chart's appearance, and I'm committed to making further improvements in the future.
 
-Currently, two official plugins are available:
+- You can access the deployed project at: https://fitpeodashboard.vercel.app/dashboard
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Technology used: React + vite and MUI, for chart I use recharts package.
