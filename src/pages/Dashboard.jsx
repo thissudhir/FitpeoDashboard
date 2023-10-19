@@ -11,10 +11,16 @@ export const Dashboard = () => {
       <Boxs />
       <Grid
         container
-        sx={{ display: "flex", justifyContent: "space-between", gap: "30px" }}
+        spacing={{ xs: 2, md: 3 }} // Adjust the spacing as needed
       >
-        <Barchart />
-        <Piechart />
+        <Grid item xs={12} md={9}>
+          {" "}
+          {/* Full width on small screens, half width on medium screens and above */}
+          <Barchart />
+        </Grid>
+        <Grid item xs={12} md={3}>
+          <Piechart />
+        </Grid>
       </Grid>
       <Products />
     </Box>

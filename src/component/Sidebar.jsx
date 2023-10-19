@@ -70,7 +70,7 @@ export const Sidebar = () => {
     <Box component="nav" bgcolor="#040440">
       {isSmallScreen ? (
         <IconButton
-          color="inherit"
+          color="white"
           onClick={toggleDrawer}
           sx={{ display: { xs: "block", sm: "none" } }}
         >
@@ -134,23 +134,23 @@ export const Sidebar = () => {
 
       {/* Fixed sidebar for large screens */}
       {!isSmallScreen ? (
-        <Box>
+        <Box height={"100vh"}>
           <Box m="1.5rem 2rem 2rem 3rem">
-            {/* <FlexBetween> */}
-            <Box
-              display="flex"
-              alignItems="center"
-              // flexDirection={"row"}
-              gap="0.5rem"
-              justifyContent={"space-between"}
-              color={"white"}
-            >
-              <DashboardOutlined />
-              <Typography variant="h5" fontWeight="bold">
-                DASHBOARD
-              </Typography>
-            </Box>
-            {/* </FlexBetween> */}
+            <FlexBetween>
+              <Box
+                display="flex"
+                alignItems="center"
+                // flexDirection={"row"}
+                gap="0.5rem"
+                justifyContent={"space-between"}
+                color={"white"}
+              >
+                <DashboardOutlined />
+                <Typography variant="h5" fontWeight="bold">
+                  DASHBOARD
+                </Typography>
+              </Box>
+            </FlexBetween>
             {/* </Box> */}
             <List sx={{ color: "#61658B" }}>
               {navItems.map(({ text, icon, arrow }) => {
