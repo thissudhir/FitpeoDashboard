@@ -68,7 +68,7 @@ export const Sidebar = () => {
 
   return (
     <Box component="nav" bgcolor="#040440">
-      {isSmallScreen ? (
+      {/* {isSmallScreen ? (
         <IconButton
           color="white"
           onClick={toggleDrawer}
@@ -76,61 +76,7 @@ export const Sidebar = () => {
         >
           <MenuOutlined />
         </IconButton>
-      ) : null}
-
-      <Drawer
-        anchor="left"
-        open={drawerOpen}
-        onClose={toggleDrawer}
-        variant="temporary"
-      >
-        {/* Drawer content */}
-        <Box sx={{ width: 280 }}>
-          <List sx={{ color: "#61658B" }}>
-            {navItems.map(({ text, icon, arrow }) => {
-              if (!icon) {
-                return (
-                  <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
-                    {text}
-                  </Typography>
-                );
-              }
-              const lcText = text.toLocaleLowerCase();
-
-              return (
-                <ListItem key={text} disablePadding>
-                  <ListItemButton
-                    onClick={() => {
-                      navigate(`/${lcText}`);
-                      setActive(lcText);
-                      toggleDrawer(); // Close the drawer on item click
-                    }}
-                    sx={{
-                      marginRight: "10px",
-                      marginLeft: "10px",
-                      borderRadius: ".6rem",
-                      width: "50%",
-                      backgroundColor:
-                        active === lcText ? "#2D2D69" : "transparent",
-                      color: active === lcText ? "white" : "#61658B",
-                    }}
-                  >
-                    <ListItemIcon
-                      sx={{
-                        color: active === lcText ? "white" : "#61658B",
-                      }}
-                    >
-                      {icon}
-                    </ListItemIcon>
-                    <ListItemText primary={text} />
-                    {arrow}
-                  </ListItemButton>
-                </ListItem>
-              );
-            })}
-          </List>
-        </Box>
-      </Drawer>
+      ) : null} */}
 
       {/* Fixed sidebar for large screens */}
       {!isSmallScreen ? (
